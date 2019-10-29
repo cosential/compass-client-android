@@ -42,7 +42,7 @@ public interface APIInterface {
     Call<Void> deleteCompanyTypes(@Path("companyId") int companyId);
 
     @GET("companies/search")
-    Call<List<Object>> searchCompaniesWithKeyword(@Query("q") String keyword);
+    Call<List<Object>> searchCompaniesWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size);
 
     @POST("companies")
     Call<List<Object>> addCompanies(@Body List<Object> companies);
@@ -76,7 +76,7 @@ public interface APIInterface {
     Call<Object> getContactDetail(@Path("contactId") int contactId);
 
     @GET("contacts/search")
-    Call<List<Object>> searchContactsWithKeyword(@Query("q") String keyword);
+    Call<List<Object>> searchContactsWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size);
 
     @POST("contacts")
     Call<List<Object>> addContacts(@Body ArrayList<Object> contacts);
