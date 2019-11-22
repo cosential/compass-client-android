@@ -76,7 +76,7 @@ public interface APIInterface {
     Call<Object> getContactDetail(@Path("contactId") int contactId);
 
     @GET("contacts/search")
-    Call<List<Object>> searchContactsWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size, @Query("q") String fields);
+    Call<List<Object>> searchContactsWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size, @Query("fields") String fields);
 
     @POST("contacts")
     Call<List<Object>> addContacts(@Body ArrayList<Object> contacts);
