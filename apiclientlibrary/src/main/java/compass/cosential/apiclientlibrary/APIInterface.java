@@ -101,7 +101,10 @@ public interface APIInterface {
     Call<Object> getContactImage(@Path("contactId") int contactId, @Path("imageType") String imageType);
 
     @PUT("images/contact/{contactId}/{imageType}")
-    Call<Void> addContactFront(@Path("contactId") int contactId, @Path("imageType") String imageType, @Body Object imageData);
+    Call<Void> addContactImage(@Path("contactId") int contactId, @Path("imageType") String imageType, @Body Object imageData);
+
+    @PUT("images/contact/{contactId}/profilepicture")
+    Call<Void> addContactProfilePicture(@Path("contactId") int contactId, @Query("url") String url);
 
     @DELETE("contacts/{contactId}")
     Call<String> deleteContact(@Path("contactId") int contactId);
