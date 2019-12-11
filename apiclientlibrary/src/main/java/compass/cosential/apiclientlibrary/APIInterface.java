@@ -137,6 +137,11 @@ public interface APIInterface {
     @POST("contacts/{contactId}/Contact_MailingList")
     Call<List<Object>> addContactContactMailingLists(@Path("contactId") int contactId, @Body List<Object> contactMailingLists);
 
+    //  SubData
+
+    @GET("contacts/{contactId}/{path}")
+    Call<List<Object>> getSubData(@Path("contactId") int contactId, @Path("path") String path, @Query("from") int from, @Query("size") int size);
+
     ////////////////////////////////
 
     //  Personnel
