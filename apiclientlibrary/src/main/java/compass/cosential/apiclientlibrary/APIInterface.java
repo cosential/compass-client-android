@@ -137,7 +137,10 @@ public interface APIInterface {
     //  SubData
 
     @GET("contacts/{contactId}/{path}")
-    Call<List<Object>> getSubData(@Path("contactId") int contactId, @Path("path") String path, @Query("from") int from, @Query("size") int size);
+    Call<List<Object>> getContactSubData(@Path("contactId") int contactId, @Path("path") String path, @Query("from") int from, @Query("size") int size);
+
+    @PUT("contacts/{contactId}/{path}")
+    Call<List<Object>> addContactSubData(@Path("contactId") int contactId, @Path("path") String path, @Body List<Object> subData);
 
     ////////////////////////////////
 
