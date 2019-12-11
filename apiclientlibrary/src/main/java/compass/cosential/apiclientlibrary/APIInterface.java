@@ -97,17 +97,11 @@ public interface APIInterface {
 
     //  Image
 
-    @GET("images/contact/{contactId}/profilepicture")
-    Call<Object> getContactProfilePicture(@Path("contactId") int contactId);
+    @GET("images/contact/{contactId}/{imageType}")
+    Call<Object> getContactImage(@Path("contactId") int contactId, @Path("imageType") String imageType);
 
-    @GET("images/contact/{contact}/cardfront")
-    Call<Object> getContactFrontImage(@Path("contactId") int contactId);
-
-    @PUT("images/contact/{contactId}/cardfront")
-    Call<Void> addContactFrontImage(@Path("contactId") int contactId, @Body Object imageData);
-
-    @PUT("images/contact/{contactId}/cardback")
-    Call<Void> addContactBackImage(@Path("contactId") int contactId, @Body Object imageData);
+    @PUT("images/contact/{contactId}/{imageType}")
+    Call<Void> addContactFront(@Path("contactId") int contactId, @Path("imageType") String imageType, @Body Object imageData);
 
     @DELETE("contacts/{contactId}")
     Call<String> deleteContact(@Path("contactId") int contactId);
