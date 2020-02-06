@@ -5,10 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-/**
- * Created by softdev on 3/2/17.
- */
-
 public class Company implements Serializable {
     @SerializedName("CompanyId")
     @Expose

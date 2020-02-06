@@ -12,10 +12,6 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-/**
- * Created by softdev0420 on 9/21/16.
- */
-
 public interface APIInterface {
 
     ////////////////////////////////
