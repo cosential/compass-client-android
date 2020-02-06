@@ -25,16 +25,16 @@ public interface APIInterface {
 
     //  Company
 
-    @GET("companies/companytypes")
+    @GET("companies/companyTypes")
     Call<List<Object>> getCompanyTypes();
 
-    @GET("companies/{companyId}/companytypes")
+    @GET("companies/{companyId}/companyTypes")
     Call<List<Object>> getCompanyTypes(@Path("companyId") int companyId);
 
-    @POST("companies/{companyId}/companytypes")
+    @POST("companies/{companyId}/companyTypes")
     Call<List<Object>> addCompanyTypes(@Path("companyId") int companyId, @Body ArrayList<Object> companyTypes);
 
-    @DELETE("companies/{companyId}/companytypes")
+    @DELETE("companies/{companyId}/companyTypes")
     Call<Void> deleteCompanyTypes(@Path("companyId") int companyId);
 
     @GET("companies/search")
@@ -110,7 +110,7 @@ public interface APIInterface {
     @GET("contacts/relationships/relationship")
     Call<List<Object>> getRelationships();
 
-    @GET("contacts/relationships/relationshipstrength")
+    @GET("contacts/relationships/relationshipStrength")
     Call<List<Object>> getRelationshipStrengths();
 
     @GET("contacts/{contactId}/relationships")
@@ -150,6 +150,13 @@ public interface APIInterface {
 
     @GET("images/personnel/{personnelId}/{imageId}/thumb")
     Call<Object> getPersonnelThumbProfilePicture(@Path("personnelId") int personnelId, @Path("imageId") int imageId);
+
+    ////////////////////////////////
+
+    //  CallLog
+
+    @GET("callLogs/search")
+    Call<List<Object>> getContactCallLogs(@Query("from") int from, @Query("size") int size, @Query("q") String query);
 
     ////////////////////////////////
 }
