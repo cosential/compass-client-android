@@ -23,44 +23,7 @@ public interface APIInterface {
 
     ////////////////////////////////
 
-    //  Company
-
-    @GET("companies/companyTypes")
-    Call<List<Object>> getCompanyTypes();
-
-    @GET("companies/{companyId}/companyTypes")
-    Call<List<Object>> getCompanyTypes(@Path("companyId") int companyId);
-
-    @POST("companies/{companyId}/companyTypes")
-    Call<List<Object>> addCompanyTypes(@Path("companyId") int companyId, @Body ArrayList<Object> companyTypes);
-
-    @DELETE("companies/{companyId}/companyTypes")
-    Call<Void> deleteCompanyTypes(@Path("companyId") int companyId);
-
-    @GET("companies/search")
-    Call<List<Object>> searchCompaniesWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size);
-
-    @POST("companies")
-    Call<List<Object>> addCompanies(@Body List<Object> companies);
-
-    @POST("companies/{companyId}/addresses")
-    Call<List<Object>> addCompanyAddresses(@Path("companyId") int companyId, @Body List<Object> companyAddresses);
-
-    @PUT("companies/{companyId}")
-    Call<Object> updateCompany(@Path("companyId") int companyId, @Body Object company);
-
-    ////////////////////////////////
-
     //  Contact
-
-    @GET("contacts/types")
-    Call<List<Object>> getContactTypes();
-
-    @POST("contacts/{contactId}/types")
-    Call<List<Object>> addContactTypes(@Path("contactId") int contactId, @Body ArrayList<Object> contactTypes);
-
-    @DELETE("contacts/{contactId}/types")
-    Call<Void> deleteContactTypes(@Path("contactId") int contactId);
 
     @GET("contacts")
     Call<List<Object>> getContacts(@Query("from") int from, @Query("size") int size, @Query("full") boolean full);
@@ -69,7 +32,7 @@ public interface APIInterface {
     Call<List<Object>> getChangedContacts(@Query("includeDeleted") boolean includeDeleted, @Query("version") String version, @Query("reverse") boolean reverse);
 
     @GET("contacts/{contactId}")
-    Call<Object> getContactDetail(@Path("contactId") int contactId);
+    Call<Object> getContact(@Path("contactId") int contactId);
 
     @GET("contacts/search")
     Call<List<Object>> searchContactsWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size, @Query("fields") String fields);
@@ -79,6 +42,15 @@ public interface APIInterface {
 
     @PUT("contacts/{contactId}")
     Call<Object> updateContact(@Path("contactId") int contactId, @Body Object contact);
+
+    @GET("contacts/types")
+    Call<List<Object>> getContactTypes();
+
+    @POST("contacts/{contactId}/types")
+    Call<List<Object>> addContactTypes(@Path("contactId") int contactId, @Body ArrayList<Object> contactTypes);
+
+    @DELETE("contacts/{contactId}/types")
+    Call<Void> deleteContactTypes(@Path("contactId") int contactId);
 
     //  Address
 
@@ -143,6 +115,43 @@ public interface APIInterface {
 
     @DELETE("contacts/{contactId}/{path}")
     Call<Object> deleteContactSubData(@Path("contactId") int contactId, @Path("path") String path);
+
+    ////////////////////////////////
+
+    //  Company
+
+    @GET("companies")
+    Call<List<Object>> getCompanies(@Query("from") int from, @Query("size") int size, @Query("full") boolean full);
+
+    @GET("companies/changes")
+    Call<List<Object>> getChangedCompanies(@Query("includeDeleted") boolean includeDeleted, @Query("version") String version, @Query("reverse") boolean reverse);
+
+    @GET("companies/{companyId}")
+    Call<Object> getCompany(@Path("companyId") int companyId);
+
+    @GET("companies/search")
+    Call<List<Object>> searchCompaniesWithKeyword(@Query("q") String keyword, @Query("from") int from, @Query("size") int size);
+
+    @POST("companies")
+    Call<List<Object>> addCompanies(@Body List<Object> companies);
+
+    @GET("companies/companyTypes")
+    Call<List<Object>> getCompanyTypes();
+
+    @GET("companies/{companyId}/companyTypes")
+    Call<List<Object>> getCompanyTypes(@Path("companyId") int companyId);
+
+    @POST("companies/{companyId}/companyTypes")
+    Call<List<Object>> addCompanyTypes(@Path("companyId") int companyId, @Body ArrayList<Object> companyTypes);
+
+    @DELETE("companies/{companyId}/companyTypes")
+    Call<Void> deleteCompanyTypes(@Path("companyId") int companyId);
+
+    @POST("companies/{companyId}/addresses")
+    Call<List<Object>> addCompanyAddresses(@Path("companyId") int companyId, @Body List<Object> companyAddresses);
+
+    @PUT("companies/{companyId}")
+    Call<Object> updateCompany(@Path("companyId") int companyId, @Body Object company);
 
     ////////////////////////////////
 
