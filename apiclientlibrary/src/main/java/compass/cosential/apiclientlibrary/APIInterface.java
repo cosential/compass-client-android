@@ -153,6 +153,20 @@ public interface APIInterface {
     @PUT("companies/{companyId}")
     Call<Object> updateCompany(@Path("companyId") int companyId, @Body Object company);
 
+    //  SubData
+
+    @GET("companies/{path}")
+    Call<List<Object>> getAllCompanySubData(@Path("path") String path, @Query("from") int from, @Query("size") int size);
+
+    @GET("companies/{companyId}/{path}")
+    Call<List<Object>> getCompanySubData(@Path("companyId") int companyId, @Path("path") String path, @Query("from") int from, @Query("size") int size);
+
+    @POST("companies/{companyId}/{path}")
+    Call<List<Object>> addCompanySubData(@Path("companyId") int companyId, @Path("path") String path, @Body List<Object> subData);
+
+    @DELETE("companies/{companyId}/{path}")
+    Call<Object> deleteCompanySubData(@Path("companyId") int companyId, @Path("path") String path);
+
     ////////////////////////////////
 
     //  Personnel
