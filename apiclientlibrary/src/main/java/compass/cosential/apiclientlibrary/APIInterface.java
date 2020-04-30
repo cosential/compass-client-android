@@ -185,7 +185,7 @@ public interface APIInterface {
     //  CallLog
 
     @GET("callLogs/search")
-    Call<List<Object>> getContactCallLogs(@Query("from") int from, @Query("size") int size, @Query("q") String query);
+    Call<List<Object>> searchCallLogs(@Query("from") int from, @Query("size") int size, @Query("q") String query);
 
     ////////////////////////////////
 }
