@@ -167,6 +167,14 @@ public interface APIInterface {
     @DELETE("companies/{companyId}/{path}")
     Call<Object> deleteCompanySubData(@Path("companyId") int companyId, @Path("path") String path);
 
+    //  Image
+
+    @GET("images/companies/{path}/thumb")
+    Call<Object> getCompanyLogoThumbnail(@Path("path") String path);
+
+    @PUT("images/companies/{path}")
+    Call<Object> addCompanyLogo(@Path("path") String path, @Body Object imageData);
+
     ////////////////////////////////
 
     //  Personnel
@@ -186,6 +194,27 @@ public interface APIInterface {
 
     @GET("callLogs/search")
     Call<List<Object>> searchCallLogs(@Query("from") int from, @Query("size") int size, @Query("q") String query);
+
+    ////////////////////////////////
+
+    //  Opportunity
+
+    @GET("opportunities/search")
+    Call<List<Object>> searchOpportunities(@Query("from") int from, @Query("size") int size, @Query("q") String query);
+
+    ////////////////////////////////
+
+    //  Project
+
+    @GET("projects/search")
+    Call<List<Object>> searchProjects(@Query("from") int from, @Query("size") int size, @Query("q") String query);
+
+    ////////////////////////////////
+
+    //  Lead
+
+    @GET("leads/search")
+    Call<List<Object>> searchLeads(@Query("from") int from, @Query("size") int size, @Query("q") String query);
 
     ////////////////////////////////
 }
