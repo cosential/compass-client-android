@@ -170,10 +170,10 @@ public interface APIInterface {
     //  Image
 
     @GET("images/companies/{companyId}/thumb")
-    Call<Object> getCompanyLogoThumbnail(@Path("companyId") String companyId);
+    Call<Object> getCompanyLogoThumbnail(@Path("companyId") int companyId);
 
     @PUT("images/companies/{companyId}")
-    Call<Object> addCompanyLogo(@Path("companyId") String companyId, @Body Object imageData);
+    Call<Object> addCompanyLogo(@Path("companyId") int companyId, @Body Object imageData);
 
     ////////////////////////////////
 
