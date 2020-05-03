@@ -169,11 +169,11 @@ public interface APIInterface {
 
     //  Image
 
-    @GET("images/companies/{path}/thumb")
-    Call<Object> getCompanyLogoThumbnail(@Path("path") String path);
+    @GET("images/companies/{companyId}/thumb")
+    Call<Object> getCompanyLogoThumbnail(@Path("companyId") String companyId);
 
-    @PUT("images/companies/{path}")
-    Call<Object> addCompanyLogo(@Path("path") String path, @Body Object imageData);
+    @PUT("images/companies/{companyId}")
+    Call<Object> addCompanyLogo(@Path("companyId") String companyId, @Body Object imageData);
 
     ////////////////////////////////
 
