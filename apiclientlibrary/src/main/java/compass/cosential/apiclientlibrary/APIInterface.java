@@ -195,6 +195,12 @@ public interface APIInterface {
     @GET("callLogs/search")
     Call<List<Object>> searchCallLogs(@Query("from") int from, @Query("size") int size, @Query("q") String query);
 
+    @GET("callLogs/calldisposition")
+    Call<List<Object>> getCallLogDispositions();
+    
+    @GET("callLogs/calltype")
+    Call<List<Object>> getCallLogCallTypes();
+
     ////////////////////////////////
 
     //  Opportunity
