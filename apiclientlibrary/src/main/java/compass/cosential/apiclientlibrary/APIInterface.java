@@ -192,6 +192,15 @@ public interface APIInterface {
 
     //  CallLog
 
+    @POST("callLogs")
+    Call<List<Object>> addCallLogs(@Body List<Object> callLogs);
+
+    @POST("callLogs/{callLogId}/contacts")
+    Call<List<Object>> addCallLogContacts(@Path("callLogId") int callLogId, @Body List<Object> contactData);
+
+    @POST("callLogs/{callLogId}/companies")
+    Call<List<Object>> addCallLogCompanies(@Path("callLogId") int callLogId, @Body List<Object> companyData);
+
     @GET("callLogs/search")
     Call<List<Object>> searchCallLogs(@Query("from") int from, @Query("size") int size, @Query("q") String query);
 
