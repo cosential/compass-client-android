@@ -74,6 +74,9 @@ public interface APIInterface {
     @PUT("images/contact/{contactId}/profilepicture")
     Call<Void> addContactProfilePicture(@Path("contactId") int contactId, @Query("url") String url);
 
+    @DELETE("images/contact/{contactId}/profilepicture")
+    Call<Void> deleteContactProfilePicture(@Path("contactId") int contactId);
+
     @DELETE("contacts/{contactId}")
     Call<String> deleteContact(@Path("contactId") int contactId);
 
