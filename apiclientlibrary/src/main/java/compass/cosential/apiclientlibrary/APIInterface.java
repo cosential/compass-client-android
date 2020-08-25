@@ -117,7 +117,7 @@ public interface APIInterface {
     Call<List<Object>> addContactSubData(@Path("contactId") int contactId, @Path("path") String path, @Body List<Object> subData);
 
     @DELETE("contacts/{contactId}/{path}")
-    Call<Object> deleteContactSubData(@Path("contactId") int contactId, @Path("path") String path);
+    Call<Void> deleteContactSubData(@Path("contactId") int contactId, @Path("path") String path);
 
     ////////////////////////////////
 
@@ -168,7 +168,7 @@ public interface APIInterface {
     Call<List<Object>> addCompanySubData(@Path("companyId") int companyId, @Path("path") String path, @Body List<Object> subData);
 
     @DELETE("companies/{companyId}/{path}")
-    Call<Object> deleteCompanySubData(@Path("companyId") int companyId, @Path("path") String path);
+    Call<Void> deleteCompanySubData(@Path("companyId") int companyId, @Path("path") String path);
 
     //  Image
 
