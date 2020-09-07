@@ -219,6 +219,9 @@ public interface APIInterface {
     @GET("callLogs/calltype")
     Call<List<Object>> getCallLogCallTypes();
 
+    @PUT("callLogs/{callLogId}")
+    Call<Object> updateCallLog(@Path("callLogId") int callLogId, @Body Object callLog);
+
     ////////////////////////////////
 
     //  Opportunity
