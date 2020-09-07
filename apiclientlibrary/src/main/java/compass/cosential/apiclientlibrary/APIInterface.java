@@ -199,7 +199,7 @@ public interface APIInterface {
     Call<List<Object>> addCallLogs(@Body List<Object> callLogs);
 
     @GET("callLogs/{callLogId}/{path}")
-    Call<List<Object>> getCallLogSubData(@Path("callLogId") int callLogId, @Path("path") int path);
+    Call<List<Object>> getCallLogSubData(@Path("callLogId") int callLogId, @Path("path") int path, @Query("from") int from, @Query("size") int size);
 
     @POST("callLogs/{callLogId}/contacts")
     Call<List<Object>> addCallLogContacts(@Path("callLogId") int callLogId, @Body List<Object> contactData);
