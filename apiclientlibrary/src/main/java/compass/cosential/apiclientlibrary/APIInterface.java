@@ -21,6 +21,12 @@ public interface APIInterface {
     @GET("user")
     Call<List<Object>> signIn();
 
+    @GET("user/features")
+    Call<List<Object>> getFeatures();
+
+    @GET("user/firmsettings")
+    Call<Object> getFirmSettings();
+
     ////////////////////////////////
 
     //  Contact
