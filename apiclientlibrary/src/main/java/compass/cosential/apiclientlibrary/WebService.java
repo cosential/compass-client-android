@@ -5,6 +5,7 @@ import android.util.Base64;
 import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -60,6 +61,9 @@ public class WebService {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.readTimeout(1, TimeUnit.MINUTES);
+        httpClient.connectTimeout(1, TimeUnit.MINUTES);
+        httpClient.writeTimeout(1, TimeUnit.MINUTES);
         httpClient.addInterceptor(new Interceptor() {
             @Override
             public Response intercept(Interceptor.Chain chain) throws IOException {
