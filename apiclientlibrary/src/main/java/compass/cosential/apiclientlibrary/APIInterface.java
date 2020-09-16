@@ -249,5 +249,11 @@ public interface APIInterface {
     @GET("leads/search")
     Call<List<Object>> searchLeads(@Query("from") int from, @Query("size") int size, @Query("q") String query);
 
+    @POST("leads")
+    Call<List<Object>> addLeads(@Body List<Object> leads);
+
+    @POST("leads/{leadId}/associatedcontacts")
+    Call<List<Object>> addLeadContacts(@Path("leadId") int leadId, @Body List<Object> contactData);
+
     ////////////////////////////////
 }
