@@ -255,5 +255,8 @@ public interface APIInterface {
     @POST("leads/{leadId}/associatedcontacts")
     Call<List<Object>> addLeadContacts(@Path("leadId") int leadId, @Body List<Object> contactData);
 
+    @POST("leads/{leadId}/potentialclient")
+    Call<List<Object>> addLeadCompanies(@Path("leadId") int leadId, @Body List<Object> companyData);
+
     ////////////////////////////////
 }
