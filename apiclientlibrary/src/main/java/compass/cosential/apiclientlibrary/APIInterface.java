@@ -159,6 +159,9 @@ public interface APIInterface {
     @POST("companies/{companyId}/addresses")
     Call<List<Object>> addCompanyAddresses(@Path("companyId") int companyId, @Body List<Object> companyAddresses);
 
+    @PUT("companies/{companyId}/addresses")
+    Call<List<Object>> updateCompanyAddresses(@Path("companyId") int companyId, @Body List<Object> companyAddresses);
+
     @PUT("companies/{companyId}")
     Call<Object> updateCompany(@Path("companyId") int companyId, @Body Object company);
 
