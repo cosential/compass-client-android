@@ -201,7 +201,7 @@ public interface APIInterface {
     Call<Object> getPersonnelThumbProfilePicture(@Path("personnelId") int personnelId, @Path("imageId") int imageId);
 
     @GET("personnel/{personnelId}/{path}")
-    Call<List<Object>> getPersonnelSubData(@Path("personnelId") int personnelId, @Path("path") String path);
+    Call<List<Object>> getPersonnelSubData(@Path("personnelId") int personnelId, @Path("path") String path, @Query("from") int from, @Query("size") int size);
 
     ////////////////////////////////
 
