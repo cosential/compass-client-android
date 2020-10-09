@@ -192,7 +192,7 @@ public interface APIInterface {
     //  Personnel
 
     @GET("personnel")
-    Call<List<Object>> getPersonnel(@Query("from") int from, @Query("size") int size);
+    Call<List<Object>> getPersonnel(@Query("from") int from, @Query("size") int size, @Query("full") boolean full);
 
     @GET("personnel/{personnelId}")
     Call<Object> getPersonnelDetail(@Path("personnelId") int personnelId);
