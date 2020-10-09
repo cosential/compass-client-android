@@ -194,6 +194,9 @@ public interface APIInterface {
     @GET("personnel")
     Call<List<Object>> getPersonnel(@Query("from") int from, @Query("size") int size);
 
+    @GET("personnel/{personnelId}")
+    Call<List<Object>> getPersonnelDetail(@Path("personnelId") int personnelId);
+
     @GET("personnel/{personnelId}/images")
     Call<List<Object>> getPersonnelProfilePictures(@Path("personnelId") int personnelId);
 
