@@ -100,6 +100,12 @@ public interface APIInterface {
     @POST("contacts/{contactId}/relationships")
     Call<List<Object>> addContactRelationships(@Path("contactId") int contactId, @Body List<Object> relationships);
 
+    @PUT("contacts/{contactId}/relationships/{relationshipId}")
+    Call<Object> updateContactRelationships(@Path("contactId") int contactId, @Path("relationshipId") int relationshipId, @Body Object relationship);
+
+    @DELETE("contacts/{contactId}/relationships/{relationshipId}")
+    Call<Void> deleteContactRelationship(@Path("contactId") int contactId, @Path("relationshipId") int relationshipId);
+
     //  MailingList
 
     @GET("contacts/Contact_MailingList")
