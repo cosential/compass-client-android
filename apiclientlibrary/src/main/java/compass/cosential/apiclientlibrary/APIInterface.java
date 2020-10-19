@@ -182,8 +182,14 @@ public interface APIInterface {
     @POST("companies/{companyId}/{path}")
     Call<List<Object>> addCompanySubData(@Path("companyId") int companyId, @Path("path") String path, @Body List<Object> subData);
 
+    @PUT("companies/{companyId}/{path}/{subDataId}")
+    Call<Object> updateCompanySubData(@Path("companyId") int companyId, @Path("path") String path, @Path("subDataId") int subDataId);
+
     @DELETE("companies/{companyId}/{path}")
-    Call<Void> deleteCompanySubData(@Path("companyId") int companyId, @Path("path") String path);
+    Call<Void> deleteAllCompanySubData(@Path("companyId") int companyId, @Path("path") String path);
+
+    @DELETE("companies/{companyId}/{path}/{subDataId}")
+    Call<Void> deleteCompanySubData(@Path("companyId") int companyId, @Path("path") String path, @Path("subDataId") int subDataId);
 
     //  Image
 
